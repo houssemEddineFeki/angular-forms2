@@ -1,0 +1,133 @@
+[
+    {
+        "accountId": 1,
+        "acccountName": "Margin",
+        "accountType": "Individual"
+    },
+    {
+        "accountId": 2,
+        "acccountName": "Tax-Free Savings Account (TFSA)",
+        "accountType": "Individual"
+    },
+    {
+        "accountId": 3,
+        "acccountName": "Registered Retirement Savings Plan (RRSP)",
+        "accountType": "Individual"
+    },
+    {
+        "accountId": 4,
+        "acccountName": "Forew  CFDs ",
+        "accountType": "Individual"
+    },
+    {
+        "accountId": 5,
+        "acccountName": "Spousal Registred Retiement Savings Plan (RRSP) ",
+        "accountType": "Retirement"
+    },
+    {
+        "accountId": 6,
+        "acccountName": "Locked-in Registred Retirement Savings Plan (RRSP) ",
+        "accountType": "Retirement"
+    },
+    {
+        "accountId": 7,
+        "acccountName": "Locked-in Retirement Account (LIRA) ",
+        "accountType": "Retirement"
+    },
+    {
+        "accountId": 8,
+        "acccountName": "Retirement Income Fund (RIF) ",
+        "accountType": "Retirement"
+    },
+    {
+        "accountId": 9,
+        "acccountName": "Life Income Fund (LIF) ",
+        "accountType": "Retirement"
+    },
+    { 
+        "accountId": 10,
+        "acccountName": "Joint Margin ",
+        "accountType": "Margin"
+    },
+    {
+        "accountId": 11,
+        "acccountName": "Corporate Margin ",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 12,
+        "acccountName": "Investment Club ",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 13,
+        "acccountName": "PartnerShip ",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 14,
+        "acccountName": "Sole Proprietorship ",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 15,
+        "acccountName": "Informal Trust ",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 16,
+        "acccountName": "Joint Informal Trust",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 17,
+        "acccountName": "Formal Trust",
+        "accountType": "Entity"
+    },
+    {
+        "accountId": 18,
+        "acccountName": "Joint Forex & CFDs",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 19,
+        "acccountName": "Informal Trust",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 20,
+        "acccountName": "Joint Informal Trust",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 21,
+        "acccountName": "Formal Trust",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 22,
+        "acccountName": "Corporate Forex & CFDs",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 23,
+        "acccountName": "Investment Club",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 24,
+        "acccountName": "Partnership",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 25,
+        "acccountName": "Solo Proprietorship",
+        "accountType": "Forex_and_CFDs"
+    },
+    {
+        "accountId": 26,
+        "acccountName": "Portfolio IQ",
+        "accountType": "Education",
+        "description" :"A professionally-managed ETF portfolio"
+    } 
+]

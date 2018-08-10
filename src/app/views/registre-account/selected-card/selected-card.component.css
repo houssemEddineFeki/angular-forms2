@@ -1,0 +1,9 @@
+.portfolio-type_cards-item_remove {
+    float:right;
+    font-size: 14px;
+    color: #296095;
+    cursor: pointer;
+}
+.card-body{
+    border-bottom: 1px solid grey;
+}

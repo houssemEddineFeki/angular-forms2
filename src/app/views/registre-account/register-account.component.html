@@ -1,0 +1,51 @@
+<div class="mdc-elevation--z2 demo-cell">
+    <div class="container " style="padding-top: 30px;">
+        <div class="row justify-content-md-center m1">
+            <span class="display-6">Choose your accounts.</span>
+            <span class="display-6" style="font-weight: 300;">You can add and open as many as you like.</span>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-8 border-right">
+                <span class="display-7" style="padding-left: 10px;">Self-directed accounts - For investing on your own</span>
+                <div class="row">
+                    <div class="col-md-8 col-lg-5" style="margin-top: 20px" *ngFor="let account1 of FiltredAccounts('individual')">
+                        <add-card [account2]="account1" (cardClicked)=handleCardClick($event)>
+                        </add-card>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="display-7" style="padding-left: 30px; font-size: 17px;">Other account types</span>
+                </div>
+                <div class="row" class="typesCount">
+                    <ul>
+                        <li class="Marginli" *ngFor="let accountType of accountTypes">
+                            <div>
+                                <a class="TypeAccountstl" data-toggle="collapse" [attr.data-target]="'#' + accountType">
+                                    <i class="fa fa-chevron-right" style="color: dimgrey;"></i>
+                                    <span style="color: dimgrey">{{accountType}}</span>
+                                </a>
+                                <div id="{{accountType}}" class="collapse">
+                                    <div class="row">
+                                        <div class="col-md-8 col-lg-5" style="margin-top: 20px" *ngFor="let account1 of FiltredAccounts(accountType)">
+                                            <add-card [account2]="account1" (click)=handleCardClick(account1) >
+                                            </add-card>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="container" style="margin-left: 10px " *ngIf="!checkSelectedCards()">
+                    <div class="row" style="color: dimgrey; font-size: 18px; font-weight: 400;margin-bottom: 10px;">You're opening {{SelectedAccounts.length}} occount(s)</div>
+                    <div *ngFor="let accountS of SelectedAccounts">
+                            <selected-card [accountSelected]="accountS" (click)=handleCardClick(accountS)></selected-card>
+                    </div>
+                    <div class="btn btn-block btn-ghost-success active" style="margin-top: 30px;">OPEN NOW</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

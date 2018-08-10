@@ -1,0 +1,36 @@
+.portfolio-type_cards-item_add, .portfolio-type_cards-item_remove {
+    position: absolute;
+    /*right: 20px;
+    bottom: 20px;*/
+    float:right;
+    font-size: 14px;
+    color: #296095;
+    margin-bottom: 10px;
+    bottom: 7px;
+    right : 20px;
+}
+.portfolio-type_cards-item_add i {
+    /*position: absolute;
+    /*top: -5px;
+    left: -15px;*/
+    font-size: 20.5px;
+    font-style: normal;
+    font-weight: 600;
+    clear: both;
+}
+.block{
+    cursor: pointer;
+    min-height: 130px;
+}
+.hoveredBlock:hover{
+    box-shadow: 1px 8px 10px grey;
+   -webkit-transition:  box-shadow .2s ease-in;
+}
+ .card{
+     position: relative;
+ }
+ .selectedCard
+ {
+    border: 1px solid green;
+    background-color: #F8FBF4;
+ }

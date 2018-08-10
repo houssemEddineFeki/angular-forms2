@@ -1,0 +1,14 @@
+<div class="card block" (click)="onClick()" [ngClass]="getNgClass()">
+    <!--class= "selectedCard    hoveredBlock"-->
+    <div class="card-body">
+        <div style="color: dimgray; font-weight: 500; font-size: 11px">{{ account2?.accountType | uppercase }}</div>
+        <div style=" font-weight: 430; font-size: 16px"> {{ account2?.acccountName }}</div>
+        <span class="portfolio-type_cards-item_add" *ngIf="!isSelected">
+            <i>+</i>
+            Add
+        </span>
+        <span class="portfolio-type_cards-item_remove" *ngIf="isSelected">
+            Remove
+        </span>
+    </div>
+</div>

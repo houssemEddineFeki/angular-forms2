@@ -51,6 +51,11 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'register-account',
+        loadChildren: './views/registre-account/register-account.module#RegisterAccountModule'
+        //loadChildren: './views/widgets/widgets.module#WidgetsModule'
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },
