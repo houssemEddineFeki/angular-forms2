@@ -438,7 +438,11 @@ label.radio .emot .mouth.sad {
             margin-top: -30px;
             max-width: 450px;
             margin-left: 20px;
-        }
+		}
+		.container-fluid{
+			padding: 0px;
+			margin-top: 80px;
+		}
   }
   
   @media screen and (max-width: 500px) {
@@ -449,7 +453,8 @@ label.radio .emot .mouth.sad {
         font-size: 1.2rem;
     }
     .container-fluid{
-        padding: 0px;
+		padding: 0px;
+		margin-top:-30px;
     }
     .container{
         padding-left: 25px;

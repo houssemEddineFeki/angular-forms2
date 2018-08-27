@@ -23,7 +23,7 @@ button:active,
 .container {
 	max-width: 650px;
     margin: 0 auto;
-	margin-top: -40px; 
+	margin-top: 50px; 
 }
 
 .steps {
@@ -414,5 +414,5 @@ label.radio .emot .mouth.sad {
 	padding: 0px 10px 0px 45px; float: none; margin: 0 auto;
 }
 .adjustHeight{
-	min-height:250px;
+	min-height:300px;
 }

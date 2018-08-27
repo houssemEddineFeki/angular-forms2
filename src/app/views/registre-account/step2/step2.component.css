@@ -22,7 +22,7 @@ button:active,
 
 .container {
 	max-width: 450px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .steps {
@@ -429,7 +429,7 @@ label.radio .emot .mouth.sad {
 		
         padding-left: 25px;
         padding-right: 25px;
-        margin-top:-70px;
+        margin-top:-40px;
 	}
 	.steps {
 		margin-top: 30px;
