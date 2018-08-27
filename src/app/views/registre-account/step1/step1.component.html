@@ -1,12 +1,12 @@
-<div class="mdc-elevation--z2 demo-cell">
-    <div class="container " style="padding-top: 30px;">
+<div class="mdc-elevation--z2 demo-cell" >
+    <div class="container ">
         <div class="row justify-content-md-center m1">
             <span class="display-6">Choose your accounts.</span>
             <span class="display-6" style="font-weight: 300;">You can add and open as many as you like.</span>
         </div>
-        <div class="row" style="margin-top: 50px;">
+        <div class="row accountArea" >
             <div class="col-md-8 border-right">
-                <span class="display-7" style="padding-left: 10px;">Account Type</span>
+                <span class="display-7" style="padding-left: 10px;">Self-directed accounts - For investing on your own</span>
                 <div class="row">
                     <div class="col-md-6 col-lg-5" style="margin-top: 15px" *ngFor="let account1 of FiltredAccounts('individual')">
                         <add-card [account2]="account1" (cardClicked)=handleCardClick($event)>
