@@ -28,8 +28,6 @@
         <form [formGroup]="step5Form" (ngSubmit)="nextStep5(step5Form.value)" style="margin-top: 20px">
             <div class="form-group">
                 <label for="question1">Question 1</label>
-                {{ question1.invalid}}
-                {{question1.value}}
                 <select class="form-control" id="question1"
                 formControlName="question1" [ngClass]="{'is-invalid': (question1.invalid && question1.dirty) || (question1.invalid && submitted) }">
                     <option value=""></option>
