@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 35px;">
+        <span class="display-6"> Welcome to JitneyTrade.</span>
+    </div>
+    <div class="row" style="margin-top:10px;">
+        <span class="display-7"> Build your profile. </span>
+        <span class="display-6">We’ll get to your account questions after.</span>
+    </div>
+
+    <div class="container center slider-two-active">
+        <div class="steps">
+            <div class="step step-one">
+                <span>CREATE USER ID</span>
+            </div>
+            <div class="step step-two">
+                <div class="liner"></div>
+                <span>BUILD PROFILE</span>
+            </div>
+            <div class="step step-three">
+                <div class="liner"></div>
+                <span>SET UP ACCOUNT</span>
+            </div>
+        </div>
+        <div class="line">
+            <div class="dot-move"></div>
+            <div class="dot zero"></div>
+            <div class="dot center"></div>
+            <div class="dot full"></div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:-10px;">
+        <span class="display-5" style="color: #394353">Profile</span>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+
+        <div class="col-sm-6 col-lg-3" *ngFor="let prof1 of profileProgression">
+            <profile-card [prof2]="prof1">
+            </profile-card>
+        </div>
+    </div>
+</div>

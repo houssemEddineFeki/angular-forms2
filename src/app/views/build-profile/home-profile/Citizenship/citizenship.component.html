@@ -1,0 +1,59 @@
+<div class="container center slider-two-active">
+    <div class="steps">
+        <div class="step step-one">
+            <span>CREATE USER ID</span>
+        </div>
+        <div class="step step-two">
+            <span>BUILD PROFILE</span>
+        </div>
+        <div class="step step-three">
+            <span>SET UP ACCOUNT</span>
+        </div>
+    </div>
+    <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+    </div>
+    <div class="row" style="margin-top: -20px ">
+        <h1>Citizenship</h1>
+    </div>
+    <form [formGroup]="CitizenshipForm" (ngSubmit)="CitizenshipSub(CitizenshipForm.value)" style="margin-top: 20px; ">
+        <div class="adjustHeight">
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="country">Country</label>
+                    <select class="form-control" id="country" formControlName="country" [ngClass]="{'is-invalid': (country.invalid && country.dirty) || (country.invalid && submitted) }">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Canada">Canada</option>
+                        <option value="US">United States</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <h2 style="color: #495260 ; margin-top:15px;">Citizenship of spouse</h2>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="spouseCountry">Country</label>
+                    <select class="form-control" id="spouseCountry" formControlName="spouseCountry" [ngClass]="{'is-invalid': (spouseCountry.invalid && spouseCountry.dirty) || (spouseCountry.invalid && submitted) }">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Canada">Canada</option>
+                        <option value="US">United States</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="cont" style="margin-top: 30px">
+            <div class="row align-items-center">
+                <div class="col-6" style="padding: 0px 10px 0px 45px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step3']" title="finish later"> Save</button>
+                </div>
+                <div class="col-6 " style="padding: 0px 45px 0px 10px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary active">Continue</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

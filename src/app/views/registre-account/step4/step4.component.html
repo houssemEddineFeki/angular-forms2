@@ -1,0 +1,57 @@
+<div class="container slider-one-active">
+    <div class="steps">
+        <div class="step step-one">
+            <div class="liner"></div>
+            <span>CREATE USER ID</span>
+        </div>
+        <div class="step step-two">
+            <div class="liner"></div>
+            <span>BUILD PROFILE</span>
+        </div>
+        <div class="step step-three">
+            <div class="liner"></div>
+            <span>SET UP ACCOUNT</span>
+        </div>
+    </div>
+    <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+    </div>
+    <div class="row" style="margin-top: -20px ">
+        <h1>Create user ID</h1>
+    </div>
+    <div class="row">
+        <h2 style="font-weight: 350">Enter your user ID and password. You’ll use these every time you log into Jitneytrade.</h2>
+    </div>
+    <form [formGroup]="step4Form" (ngSubmit)="nextStep4(step4Form.value)" style="margin-top: 20px">
+        <div class="form-group">
+            <label for="UserID">User ID</label>
+            <input type="text" class="form-control" id="UserID" placeholder="Between 8-20 characters"
+            formControlName="UserID" [ngClass]="{'is-invalid': (UserID.invalid && UserID.dirty) || (UserID.invalid && submitted) }">
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" placeholder="Minimum 8 characters"
+            formControlName="Password" [ngClass]="{'is-invalid': (Password.invalid && Password.dirty) || (Password.invalid && submitted) }">
+        </div>
+        <div class="form-group">
+            <label for="confPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confPassword"
+            formControlName="confPassword" [ngClass]="{'is-invalid': (confPassword.invalid && confPassword.dirty) || (confPassword.invalid && submitted) }">
+        </div>
+        <div class="row align-items-center" style="	margin: 30px 0px;">
+            <p class="title3">You're opening .. accounts</p>
+        </div>
+        <div class="cont">
+            <div class="row align-items-center">
+                <div class="col-6" style="padding: 0px 10px 0px 45px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step3']"> Previous</button>
+                </div>
+                <div class="col-6 " style="padding: 0px 45px 0px 10px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary active" [routerLink]="['/register-account/step5']">Continue</button>
+                </div>
+            </div>
+        </div>
+    </form>

@@ -51,6 +51,10 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'build-profile',
+        loadChildren: './views/build-profile/build-profile.module#BuildProfileModule'
+      },
+      {
         path: 'register-account',
         loadChildren: './views/registre-account/register-account.module#RegisterAccountModule'
         //loadChildren: './views/widgets/widgets.module#WidgetsModule'

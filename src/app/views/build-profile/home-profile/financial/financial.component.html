@@ -1,0 +1,73 @@
+<div class="container center slider-two-active">
+    <div class="steps">
+        <div class="step step-one">
+            <span>CREATE USER ID</span>
+        </div>
+        <div class="step step-two">
+            <span>BUILD PROFILE</span>
+        </div>
+        <div class="step step-three">
+            <span>SET UP ACCOUNT</span>
+        </div>
+    </div>
+    <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+    </div>
+    <div class="row" style="margin-top: -20px ">
+        <h1>Financial</h1>
+    </div>
+    <form [formGroup]="FinancialForm" (ngSubmit)="FinancialSub(FinancialForm.value)" style="margin-top: 20px; ">
+        <div class="adjustHeight">
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="netWorth">Net worth</label>
+                    <select class="form-control" id="netWorth" formControlName="netWorth" [ngClass]="{'is-invalid': (netWorth.invalid && netWorth.dirty) || (netWorth.invalid && submitted) }">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Employed">&lt;$25,000</option>
+                        <option value="Unemployed">$25,000 &lt; $100,000</option>
+                        <option value="Retired">$100,000 &lt; $500,000</option>
+                        <option value="SelfEmployed">&gt;$500,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="annIncome">Annual income</label>
+                    <select class="form-control" id="annIncome" formControlName="annIncome" [ngClass]="{'is-invalid': (annIncome.invalid && annIncome.dirty) || (annIncome.invalid && submitted) }">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Employed">&lt;$25,000</option>
+                        <option value="Unemployed">$25,000 &lt; $100,000</option>
+                        <option value="Retired">$100,000 &lt; $500,000</option>
+                        <option value="SelfEmployed">&gt;$500,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="experience">Investment Experience</label>
+                    <select class="form-control" id="experience" formControlName="experience" [ngClass]="{'is-invalid': (experience.invalid && experience.dirty) || (experience.invalid && submitted) }">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Novice">Novice</option>
+                        <option value="Unemployed">Intermediate</option>
+                        <option value="Retired">Expert</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="cont" style="margin-top: 30px">
+            <div class="row">
+                <div class="col-6" style="padding: 0px 10px 0px 45px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step3']" title="finish later"> Save</button>
+                </div>
+                <div class="col-6 " style="padding: 0px 45px 0px 10px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary active">Continue</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -20,7 +20,7 @@
 }
 .block{
     cursor: pointer;
-    min-height: 130px;
+    min-height: 110px;
 }
 .hoveredBlock:hover{
     box-shadow: 1px 8px 10px grey;

@@ -1,0 +1,179 @@
+<div class="container center slider-two-active">
+    <div class="steps">
+        <div class="step step-one">
+            <span>CREATE USER ID</span>
+        </div>
+        <div class="step step-two">
+            <span>BUILD PROFILE</span>
+        </div>
+        <div class="step step-three">
+            <span>SET UP ACCOUNT</span>
+        </div>
+    </div>
+    <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+    </div>
+    <div class="row" style="margin-top: -20px ">
+        <h1>Personal</h1>
+    </div>
+    <form [formGroup]="PersonalForm" (ngSubmit)="personalSub(PersonalForm.value)" style="margin-top: 20px">
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input formControlName="firstName" [ngClass]="{'is-invalid': (firstName.invalid && firstName.dirty)  || (firstName.invalid && submitted) }"
+                    type="text" class="form-control" id="firstName" placeholder="match gov ID">
+            </div>
+            <div class="form- col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input formControlName="lastName" [ngClass]="{'is-invalid': (lastName.invalid && lastName.dirty) || (lastName.invalid && submitted) }"
+                    type="text" class="form-control" id="lastName" placeholder="match gov ID">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-groupe col-md-6">
+                <label for="birthDate">Date of birth </label>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                        <select class="form-control" id="dayB">
+                            <option selected disabled hidden>dd</option>
+                            <option *ngFor="let day of generateArray(31,1)">{{day}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-4">
+                        <select class="form-control" id="mounthB">
+                            <option selected disabled hidden>mm</option>
+                            <option *ngFor="let mounth of generateArray(12,1)">{{mounth}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-4">
+                        <select class="form-control" id="yearB">
+                            <option selected disabled hidden>yyyy</option>
+                            <option *ngFor="let year of generateArray(70,1930)">{{year}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="sin">Social insurance number</label>
+                <input formControlName="sin" [ngClass]="{'is-invalid': (sin.invalid && sin.dirty) || (sin.invalid && submitted) }" type="text"
+                    class="form-control" id="sin" placeholder="123-45-6789" pattern="\d{3}[\-]\d{2}[\-]\d{4}">
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="phoneNumber">Phone number</label>
+                <input formControlName="phoneNumber" [ngClass]="{'is-invalid': (phoneNumber.invalid && phoneNumber.dirty) || (phoneNumber.invalid && submitted) }"
+                    type="text" class="form-control" id="phoneNumber" placeholder="555-555-5555 x1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input formControlName="email" [ngClass]="{'is-invalid': (email.invalid && email.dirty) || (email.invalid && submitted) }"
+                    type="text" class="form-control" id="email" placeholder="name@domain.com">
+            </div>
+
+        </div>
+        <div class="form-row ">
+            <div class="form-group col-md-6">
+                <label for="maritalStat">Marital status</label>
+                <select class="form-control" id="maritalStat" 
+                formControlName="maritalStat" [ngClass]="{'is-invalid': (maritalStat.invalid && maritalStat.dirty) || (maritalStat.invalid && submitted) }">
+                    <option value="" selected disabled hidden></option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row" *ngIf="maritalStat.value === 'Married'">
+            <div class="form-group col-md-6">
+                <label for="spouseName">Name of spouse</label>
+                <input formControlName="spouseName" [ngClass]="{'is-invalid': (spouseName.invalid && spouseName.dirty) || (spouseName.invalid && submitted) }"
+                    type="text" class="form-control" id="streetNameH">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="dependents">Dependents</label>
+                <input formControlName="dependents" [ngClass]="{'is-invalid': (dependents.invalid && dependents.dirty) || (dependents.invalid && submitted) }"
+                    type="text" class="form-control" id="dependents">
+            </div>
+        </div>
+        <h2 style="color: #495260">Residential address</h2>
+        <div class="form-row mt-3">
+            <div class="form-group col-4">
+                <label for="streetNoH">Street No.</label>
+                <input formControlName="streetNoH" [ngClass]="{'is-invalid': (streetNoH.invalid && streetNoH.dirty) || (streetNoH.invalid && submitted) }"
+                    type="text" class="form-control" id="streetNoH">
+            </div>
+            <div class="form-group col-8">
+                <label for="streetNameH">Street name</label>
+                <input formControlName="streetNameH" [ngClass]="{'is-invalid': (streetNameH.invalid && streetNameH.dirty) || (streetNameH.invalid && submitted) }"
+                    type="text" class="form-control" id="streetNameH">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="cityH">City</label>
+                <input formControlName="cityH" [ngClass]="{'is-invalid': (cityH.invalid && cityH.dirty) || (cityH.invalid && submitted) }"
+                    type="text" class="form-control" id="cityH">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="provinceH">Province</label>
+                <input formControlName="provinceH" [ngClass]="{'is-invalid': (provinceH.invalid && provinceH.dirty) || (provinceH.invalid && submitted) }"
+                    type="text" class="form-control" id="provinceH">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="PostalCodeH">Postal code</label>
+                <input formControlName="PostalCodeH" [ngClass]="{'is-invalid': (PostalCodeH.invalid && PostalCodeH.dirty) || (PostalCodeH.invalid && submitted) }"
+                    placeholder="A1A1A1A" type="text" class="form-control" id="PostalCodeH" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+            </div>
+        </div>
+        <h2 style="color: #495260">Mailing address</h2>
+        <div class="form-check">
+            <input class="form-check-input" formControlName="sameAShomeCheck" id="sameAShomeCheck" type="checkbox" value="false">
+            <label class="form-check-label" for="sameAShomeCheck"> Same as home address </label>
+        </div>
+        <div class="form-row mt-3" *ngIf="!checkedBox()">
+            <div class="form-group col-4">
+                <label for="streetNoM">Street No.</label>
+                <input formControlName="streetNoM" [ngClass]="{'is-invalid': (streetNoM.invalid && streetNoM.dirty) || (streetNoM.invalid && submitted) }"
+                    type="text" class="form-control" id="streetNoM">
+            </div>
+            <div class="form-group col-8">
+                <label for="streetNameM">Street name</label>
+                <input formControlName="streetNameM" [ngClass]="{'is-invalid': (streetNameM.invalid && streetNameM.dirty) || (streetNameM.invalid && submitted) }"
+                    type="text" class="form-control" id="streetNameM">
+            </div>
+        </div>
+        <div class="form-row" style="margin-bottom: 15px;" *ngIf="!checkedBox()">
+            <div class="form-group col-md-4">
+                <label for="cityM">City</label>
+                <input formControlName="cityM" [ngClass]="{'is-invalid': (cityM.invalid && cityM.dirty) || (cityM.invalid && submitted) }"
+                    type="text" class="form-control" id="cityH">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="provinceM">Province</label>
+                <input formControlName="provinceM" [ngClass]="{'is-invalid': (provinceM.invalid && provinceM.dirty) || (provinceM.invalid && submitted) }"
+                    type="text" class="form-control" id="provinceM">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="PostalCodeM">Postal code</label>
+                <input formControlName="PostalCodeM" [ngClass]="{'is-invalid': (PostalCodeM.invalid && PostalCodeM.dirty) || (PostalCodeM.invalid && submitted) }"
+                    placeholder="A1A1A1A" type="text" class="form-control" id="PostalCodeM" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+            </div>
+        </div>
+        <div class="cont">
+            <div class="row align-items-center">
+                <div class="col-6" style="padding: 0px 10px 0px 45px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step3']" title="finish later"> Save</button>
+                </div>
+                <div class="col-6 " style="padding: 0px 45px 0px 10px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary active">Continue</button>
+                </div>
+            </div>
+        </div>
+    </form>

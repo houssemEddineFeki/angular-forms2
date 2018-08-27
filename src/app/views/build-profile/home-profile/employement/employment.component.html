@@ -1,0 +1,102 @@
+<div class="container center slider-two-active">
+    <div class="steps">
+        <div class="step step-one">
+            <span>CREATE USER ID</span>
+        </div>
+        <div class="step step-two">
+            <span>BUILD PROFILE</span>
+        </div>
+        <div class="step step-three">
+            <span>SET UP ACCOUNT</span>
+        </div>
+    </div>
+    <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+    </div>
+    <div class="row" style="margin-top: -20px ">
+        <h1>Employment</h1>
+    </div>
+    <form [formGroup]="EmploymentForm" (ngSubmit)="EmploymentSub(EmploymentForm.value)" style="margin-top: 20px; ">
+        <div class="adjustHeight">
+            <div class="form-row ">
+                <div class="form-group col-md-6">
+                    <label for="employType">Employment type</label>
+                    <select class="form-control" id="employType" formControlName="employType" [ngClass]="{'is-invalid': (employType.invalid && employType.dirty) || (employType.invalid && submitted) }">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Employed">Employed</option>
+                        <option value="Unemployed">Unemployed</option>
+                        <option value="Retired">Retired</option>
+                        <option value="SelfEmployed">Self-employed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row" *ngIf="employType.value === 'Employed' ">
+                <div class="form-group col-md-6">
+                    <label for="employerName">Employer name</label>
+                    <input formControlName="employerName" [ngClass]="{'is-invalid': (employerName.invalid && employerName.dirty) || (employerName.invalid && submitted) }"
+                        type="text" class="form-control" id="employerName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">Position</label>
+                    <input class="form-control" id="position" formControlName="position" [ngClass]="{'is-invalid': (position.invalid && position.dirty) || (position.invalid && submitted) }"
+                    />
+                </div>
+            </div>
+            <div class="form-group" *ngIf="employType.value === 'SelfEmployed' ">
+                <label for="businessType">Type of business</label>
+                <input class="form-control" id="businessType" formControlName="businessType" [ngClass]="{'is-invalid': (businessType.invalid && businessType.dirty) || (businessType.invalid && submitted) }"
+                />
+            </div>
+
+            <h2 style="color: #495260" *ngIf="isWorker()">Employment address</h2>
+            <div class="form-check" *ngIf="isWorker()">
+                <input class="form-check-input" formControlName="sameAShomeCheck" id="sameAShomeCheck" type="checkbox" value="false">
+                <label class="form-check-label" for="sameAShomeCheck"> Same as home address </label>
+            </div>
+
+            <div class="form-row mt-3" *ngIf="!checkedBox() && isWorker()">
+                <div class="form-group col-4">
+                    <label for="streetNoEMP">Street No.</label>
+                    <input formControlName="streetNoEMP" [ngClass]="{'is-invalid': (streetNoEMP.invalid && streetNoEMP.dirty) || (streetNoEMP.invalid && submitted) }"
+                        type="text" class="form-control" id="streetNoEMP">
+                </div>
+                <div class="form-group col-8">
+                    <label for="streetNameEMP">Street name</label>
+                    <input formControlName="streetNameEMP" [ngClass]="{'is-invalid': (streetNameEMP.invalid && streetNameEMP.dirty) || (streetNameEMP.invalid && submitted) }"
+                        type="text" class="form-control" id="streetNameEMP">
+                </div>
+            </div>
+            <div class="form-row" style="margin-bottom: 15px;" *ngIf="!checkedBox() && isWorker()">
+                <div class="form-group col-md-4">
+                    <label for="cityEMP">City</label>
+                    <input formControlName="cityEMP" [ngClass]="{'is-invalid': (cityEMP.invalid && cityEMP.dirty) || (cityEMP.invalid && submitted) }"
+                        type="text" class="form-control" id="cityH">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="provinceEMP">Province</label>
+                    <input formControlName="provinceEMP" [ngClass]="{'is-invalid': (provinceEMP.invalid && provinceEMP.dirty) || (provinceEMP.invalid && submitted) }"
+                        type="text" class="form-control" id="provinceEMP">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="PostalCodeEMP">Postal code</label>
+                    <input formControlName="PostalCodeEMP" [ngClass]="{'is-invalid': (PostalCodeEMP.invalid && PostalCodeEMP.dirty) || (PostalCodeEMP.invalid && submitted) }"
+                        placeholder="A1A1A1A" type="text" class="form-control" id="PostalCodeEMP" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+                </div>
+            </div>
+        </div>
+        <div class="cont" style="margin-top: 30px">
+            <div class="row align-items-center">
+                <div class="col-6" style="padding: 0px 10px 0px 45px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step3']" title="finish later"> Save</button>
+                </div>
+                <div class="col-6 " style="padding: 0px 45px 0px 10px; float: none; margin: 0 auto;">
+                    <button class="btn btn-block btn-ghost-primary active">Continue</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

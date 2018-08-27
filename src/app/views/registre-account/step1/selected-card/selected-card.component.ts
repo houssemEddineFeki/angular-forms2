@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IAccount } from '../account';
+import { IAccount } from '../../account';
 
 @Component({
   selector: 'selected-card',

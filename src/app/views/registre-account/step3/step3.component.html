@@ -1,0 +1,67 @@
+<div class="container slider-one-active">
+    <div class="steps">
+        <div class="step step-one">
+            <div class="liner"></div>
+            <span>CREATE USER ID</span>
+        </div>
+        <div class="step step-two">
+            <div class="liner"></div>
+            <span>BUILD PROFILE</span>
+        </div>
+        <div class="step step-three">
+            <div class="liner"></div>
+            <span>SET UP ACCOUNT</span>
+        </div>
+    </div>
+    <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+    </div>
+    <div class="row" style="margin-top: -20px ">
+        <h1>Create user ID</h1>
+    </div>
+    <div class="row">
+        <h2 style="font-weight: 350">Tell us a bit about yourself.</h2>
+    </div>
+    <form [formGroup]="step3Form" (ngSubmit)="nextStep3(step3Form.value)" style="margin-top: 20px">
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input formControlName="firstName" [ngClass]="{'is-invalid': (firstName.invalid && firstName.dirty)  || (firstName.invalid && submitted) }" type="text" class="form-control" id="firstName" placeholder="Must be exact match to gov ID">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input formControlName="lastName" [ngClass]="{'is-invalid': (lastName.invalid && lastName.dirty) || (lastName.invalid && submitted) }" type="text" class="form-control" id="lastName" placeholder="Must be exact match to gov ID">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" [ngClass]="{'is-invalid': (email.invalid && email.dirty) || (email.invalid && submitted) }" type="text" class="form-control" id="email" placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <input formControlName="phoneNumber" [ngClass]="{'is-invalid': (phoneNumber.invalid && phoneNumber.dirty) || (phoneNumber.invalid && submitted) }" 
+            type="text" class="form-control" id="phoneNumber" placeholder="555-555-5555 x1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        </div>
+        <div class="row">
+            <div>
+                <div class="slider-form slider-one">
+                    <label style=" color: black; text-align: left">
+                        By completing this form, I give JitneyTrade permission to contact me. I understand I can withdraw my consent at any time.
+                        </label>
+                    <div class="cont">
+                        <p class="title3">You're opening .. accounts</p>
+                        <div class="row align-items-center">
+
+                            <div class="col-6" style="padding: 0px 0px 0px 56px;">
+                                <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step1']"> Previous</button>
+                            </div>
+                            <div class="col-6 " style="padding: 0px 10px 0px 20px;">
+                                <button type="submit" class="btn btn-block btn-ghost-primary active">Continue</button><!-- [routerLink]="['/register-account/step4']"-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
