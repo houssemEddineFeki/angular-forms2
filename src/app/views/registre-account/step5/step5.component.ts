@@ -33,7 +33,7 @@ export class Step5Component implements OnInit {
     this.submitted = true;
     console.log(formValue)
     if (this.step5Form.valid) {
-      this.router.navigate(['/register-account/step1'])
+      this.router.navigate(['/build-profile/home-profile'])
     }
   }
 }
