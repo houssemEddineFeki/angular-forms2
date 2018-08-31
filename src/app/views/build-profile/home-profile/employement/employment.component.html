@@ -84,14 +84,14 @@
                 <div class="form-group col-md-4">
                     <label for="PostalCodeEMP">Postal code</label>
                     <input formControlName="PostalCodeEMP" [ngClass]="{'is-invalid': (PostalCodeEMP.invalid && PostalCodeEMP.dirty) || (PostalCodeEMP.invalid && submitted) }"
-                        placeholder="A1A1A1A" type="text" class="form-control" id="PostalCodeEMP" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+                        placeholder="A1A1A1" type="text" class="form-control" id="PostalCodeEMP" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" >
                 </div>
             </div>
         </div>
         <div class="cont" style="margin-top: 30px">
             <div class="row align-items-center">
                 <div class="col-6" style="padding: 0px 10px 0px 45px; float: none; margin: 0 auto;">
-                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/register-account/step3']" title="finish later"> Save</button>
+                    <button class="btn btn-block btn-ghost-primary" [routerLink]="['/build-profile/home-profile']" title="finish later"> Save and finish later</button>
                 </div>
                 <div class="col-6 " style="padding: 0px 45px 0px 10px; float: none; margin: 0 auto;">
                     <button class="btn btn-block btn-ghost-primary active">Continue</button>

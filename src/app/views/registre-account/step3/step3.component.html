@@ -41,7 +41,7 @@
         <div class="form-group">
             <label for="phoneNumber">Phone number</label>
             <input formControlName="phoneNumber" [ngClass]="{'is-invalid': (phoneNumber.invalid && phoneNumber.dirty) || (phoneNumber.invalid && submitted) }" 
-            type="text" class="form-control" id="phoneNumber" placeholder="555-555-5555 x1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            type="text" class="form-control" id="phoneNumber" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
         </div>
         <div class="row">
             <div>

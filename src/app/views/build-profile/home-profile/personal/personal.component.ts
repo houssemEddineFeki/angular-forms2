@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+declare var jQuery: any;
+declare var $: any;
 @Component({
   selector: 'personal',
   templateUrl: './personal.component.html',
@@ -37,6 +39,24 @@ export class PersonalComponent implements OnInit {
   constructor(private router: Router) {
   }
   ngOnInit(): void {
+    
+    $(document).ready(function () {
+      $("#phoneNumber").keyup(function (e) {
+        if (e.keyCode === 8 || e.keyCode === 37 || e.keyCode === 39) return;
+
+        if ($(this).val().length == 3) {
+          $(this).val($(this).val() + "-");
+        }
+        else if ($(this).val().length == 7) {
+          $(this).val($(this).val() + "-");
+        }
+        else if ($(this).val().length == 14) {
+          $(this).val($(this).val() + "-");
+        }
+      });
+    });
+
+
     this.submitted = false
     this.firstName = new FormControl('', Validators.required)
     this.middleName = new FormControl('', Validators.required)
