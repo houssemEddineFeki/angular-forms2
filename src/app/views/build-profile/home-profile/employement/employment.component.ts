@@ -51,9 +51,11 @@ export class EmploymentComponent implements OnInit {
   }
   EmploymentSub(formValue){
     this.submitted = true;
+    console.log(formValue)
     if (this.EmploymentForm.valid) {
       this.router.navigate(['/build-profile/home-profile'])
     }
+    
   }
   checkedBox(): boolean{
     if(this.sameAShomeCheck.dirty)

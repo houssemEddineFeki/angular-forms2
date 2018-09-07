@@ -7,11 +7,14 @@ import { SelectedCardComponent } from './selected-card/selected-card.component';
 import { AddCardComponent } from './add-card/add-card.component';
 import { Step1Component } from './step1.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule,
-        RouterModule
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AddCardComponent,

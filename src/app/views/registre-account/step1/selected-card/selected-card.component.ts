@@ -7,9 +7,5 @@ import { IAccount } from '../../account';
   styleUrls: ['./selected-card.component.css']
 })
 export class SelectedCardComponent {
-    @Input() accountSelected:IAccount;
-    @Output() removeClicked: EventEmitter<IAccount> = new EventEmitter<IAccount>();
-    onClick(){
-        this.removeClicked.emit(this.accountSelected);
-    }
+    @Input() accountSelected:string;
 }

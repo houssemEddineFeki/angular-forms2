@@ -7,8 +7,6 @@ import { navItems } from './../../_nav';
   styles: ['.phone { font-weight: 700;OpenSans, "Open Sans", sans-serif; font-size: 11px; line-height: 16px; color: #6e777d;}']
 })
 export class DefaultLayoutComponent {
-  public navItems = navItems;
-
   constructor() {
 
    

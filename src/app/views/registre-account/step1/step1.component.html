@@ -1,9 +1,10 @@
-<div class="mdc-elevation--z2 demo-cell" >
+<div class="mdc-elevation--z2 demo-cell">
     <div class="container ">
         <div class="row justify-content-md-center m1">
             <span class="display-6">Choose your accounts.</span>
             <span class="display-6" style="font-weight: 300;">You can add and open as many as you like.</span>
         </div>
+        <!--
         <div class="row accountArea" >
             <div class="col-md-8 border-right">
                 <span class="display-7" style="padding-left: 10px;">Self-directed accounts - For investing on your own</span>
@@ -48,5 +49,71 @@
                 </div>
             </div>
         </div>
+        -->
+        <form *ngIf="loaded" [formGroup]="step1Form" (ngSubmit)="nextStep1(step1Form.value)">
+            <div class="row accountArea">
+                <div class="col-md-8 border-right">
+                    <span class="display-7">Account type</span>
+                    <div class="row">
+
+                        <div class="col-md-6" style="margin-top: 15px" *ngFor="let accType of displayedAccountType; let i = index">
+                            <input id="{{i}}" name="AccountType" class="checkbox-custom" type="checkbox" (change)="onChange(accType, $event.target.checked)">
+                            <!--formControlName="AccountType"-->
+                            <label for="{{i}}" class="checkbox-custom-label">{{accType}}</label>
+                            <div *ngIf="accType === 'Margin Account (fully paid)' && Marginchecked()" style="margin-left:17px;">
+                                    <div>
+                                        <input id="selling" class="radio-custom" formControlName="options" name="options" type="radio" value="selling" (change)="hundleOption($event)">
+                                        <label for="selling" class="radio-custom-label">with short selling</label>
+                                    </div>
+                                    <div>
+                                        <input id="trading" class="radio-custom" formControlName="options" name="options" type="radio" value="trading" (change)="hundleOption($event)" ><!---->
+                                        <label for="trading" class="radio-custom-label">with option trading</label>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <span class="display-7" style="margin-top: 25px; margin-bottom: 12px;">Account format</span>
+                    <div class="row">
+                        <div class="col-md-3" *ngFor="let accForm of accountFormat">
+                            <input class="radio-custom" type="radio" id="{{accForm}}" formControlName="AccountFormat" name="AccountFormat" value="{{accForm}}">
+                            <label for="{{accForm}}" class="radio-custom-label">
+                                {{accForm}}
+                            </label>
+                        </div>
+                    </div>
+                    <div *ngIf="displayOptionTrading && Marginchecked()">
+                        <span class="display-7" style="margin-top: 25px; margin-bottom: 12px;">Option trading</span>
+                        <div class="row">
+                            <div class="col-md-6" *ngFor="let option of tradingOptions">
+                                <input class="radio-custom" type="radio" id="{{option}}" formControlName="options" name="options" value="{{option}}">
+                                <label for="{{option}}" class="radio-custom-label">{{option}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="display-7" style="margin-top: 25px; margin-bottom: 12px;">Account operation</span>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input class="radio-custom" type="radio" id="Supplementary" formControlName="operations" name="operations" value="Supplementary">
+                            <label for="Supplementary" class="radio-custom-label">Supplementary</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="radio-custom" type="radio" id="Primary" formControlName="operations" name="operations" value="Primary">
+                            <label for="Primary" class="radio-custom-label">Primary</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container" style="margin-left: 10px " *ngIf="!checkSelectedCards()">
+                        <div class="row" style="color: dimgrey; font-size: 18px; font-weight: 400;margin-bottom: 10px;">You're opening {{SelectedAccounts.length}} occount(s)</div>
+                        <div *ngFor="let accountS of SelectedAccounts.value">
+                            <selected-card [accountSelected]="accountS"></selected-card>
+                        </div>
+                        <button class="btn btn-block btn-ghost-success active" style="margin-top: 30px;" type="submit">OPEN NOW</button>
+                    </div>
+                </div>
+            </div>
+            <!--<input type="submit" text="click" />
+            <div *ngIf="!step1Form.valid">At least one order must be selected</div>-->
+            <!--<input type="text" formControlName="name"/>-->
+        </form>
     </div>
-</div>
